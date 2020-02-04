@@ -4,12 +4,104 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>11 Quiz</title>
     <link rel="stylesheet" href="">
 </head>
 
 <body>
-    <script></script>
+
+    <h1>Quiz</h1>
+
+    <p id="question"></p>
+    <input type="text" id="answer">
+    <button>Tjek svar</button>
+    <p id="question_output"></p>
+    <p id="score"></p>
+
+    <script>
+        window.addEventListener("load", loadQuestions);
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        let point = 0;
+        let questionCounter = 1;
+        let answerInput = document.querySelector("#answer");
+        let quizOutput = document.querySelector("#question_output");
+
+        let question1 = "Hvad er Italiens hovedstad?";
+        let question2 = "Hvad er Tysklands hovedstad?";
+        let question3 = "Hvad er Japans hovedstad?";
+        let question4 = "Hvad er Thailands hovedstad?";
+        let question5 = "Hvad er Filippinernes hovedstad?";
+
+        function loadQuestions() {
+            if (questionCounter == 1) {
+                document.querySelector("#question").innerHTML = question1;
+            } else if (questionCounter == 2) {
+                document.querySelector("#question").innerHTML = question2;
+            } else if (questionCounter == 3) {
+                document.querySelector("#question").innerHTML = question3;
+            } else if (questionCounter == 4) {
+                document.querySelector("#question").innerHTML = question4;
+            } else if (questionCounter == 5) {
+                document.querySelector("#question").innerHTML = question5;
+            }
+
+        }
+
+        function buttonClicked() {
+            if (questionCounter == 1) {
+                if (answerInput.value == "Rom" || answerInput.value == "Rom" || answerInput.value == "Rom") {
+                    quizOutput.innerHTML = "Korrekt, det er Rom!";
+                    point++;
+                } else {
+                    quizOutput.innerHTML = "Forkert, det er Rom!";
+                }
+            }
+
+            if (questionCounter == 2) {
+                if (answerInput.value == "Berlin" || answerInput.value == "Berlin" || answerInput.value == "Berlin" || answerInput.value == "Berlin") {
+                    quizOutput.innerHTML = "Korrekt, det er Berlin!";
+                    point++;
+                } else {
+                    quizOutput.innerHTML = "Forkert, det er Berlin!";
+                }
+            }
+
+            if (questionCounter == 3) {
+                if (answerInput.value == "Tokyo" || answerInput.value == "Tokyo") {
+                    quizOutput.innerHTML = "Korrekt, det er Tokyo!";
+                    point++;
+                } else {
+                    quizOutput.innerHTML = "Forkert, det er Tokyo!";
+                }
+            }
+
+            if (questionCounter == 4) {
+                if (answerInput.value == "Bangkok" || answerInput.value == "Bangkok" || answerInput.value == "Bangkok") {
+                    quizOutput.innerHTML = "Korrekt, det er Bangkok!";
+                    point++;
+                } else {
+                    quizOutput.innerHTML = "Forkert, det er Bangkok!";
+                }
+            }
+
+            if (questionCounter == 5) {
+                if (answerInput.value == "Manila" || answerInput.value == "Manila") {
+                    quizOutput.innerHTML = "Korrekt, det er Manila";
+                    point++;
+                } else {
+                    quizOutput.innerHTML = "Forkert, det er Manila!";
+                }
+                document.querySelector("#question").innerHTML = "Der er ikke flere spørgsmål";
+                document.querySelector("#score").innerHTML = `Du fik ${point} point i denne quiz. Godt gået!`;
+            }
+
+            answerInput.value = "";
+            questionCounter++;
+            loadQuestions();
+        }
+
+    </script>
 </body>
 
 </html>
