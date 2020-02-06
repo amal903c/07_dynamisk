@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article id="dyr">
+        <h3></h3>
+        <img src="" alt="">
+        <p class="type">Type: </p>
+        <p class="levested">Levested: </p>
+
+
+    </article>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("start");
+
+            const article = document.querySelector("article");
+
+
+            const dyr = {
+                "navn": "Gris",
+                "type": "Pattedyr",
+                "levested": "Svinefarme",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+            };
+
+
+            const destination = document.querySelector("#dyr");
+            const name = `${dyr.navn}`;
+
+            console.log(name);
+
+            destination.querySelector("h3").textContent = name;
+            destination.querySelector(".type").textContent += dyr.type;
+            destination.querySelector(".levested").textContent += dyr.levested;
+            destination.querySelector("img").src = dyr.billede;
+
+
+
+        }
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
