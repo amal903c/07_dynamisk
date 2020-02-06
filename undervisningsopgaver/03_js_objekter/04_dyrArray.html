@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article></article>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("start");
+
+            const article = document.querySelector("article");
+
+            const array = [{
+                    "navn": "gris",
+                    "type": "pattedyr",
+                    "levested": "svinefarm",
+                    "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+                },
+                {
+                    "navn": "frø",
+                    "type": "amfibie",
+                    "levested": "sø",
+                    "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+                },
+
+                {
+                    "navn": "ræv",
+                    "type": "pattedyr",
+                    "levested": "skoven",
+                    "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+                },
+
+                {
+                    "navn": "sild",
+                    "type": "fisk",
+                    "levested": "havet",
+                    "billede": "http://mabe-kea.dk/E19/pics/sild.jpg"
+                },
+
+                {
+                    "navn": "krokodille",
+                    "type": "krybdyr",
+                    "levested": "sø",
+                    "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+                },
+            ]
+
+            console.log(array);
+
+        }
+
+
+
+        const dyr = {
+            "navn": "gris",
+            "type": "pattedyr",
+            "levested": "svinefarme",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        };
+
+
+        const object = `Navn: ${dyr.navn} Type: {dyr.type} Billede: ${dyr.billede} Levested: ${dyr.levested}`;
+        console.log(object);
+
+
+        let img = document.createElement("img");
+        img.src = "http://mabe-kea.dk/E19/pics/pig.png";
+        document.querySelector("article").appendChild(img);
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
