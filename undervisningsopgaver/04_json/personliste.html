@@ -21,6 +21,7 @@
             margin: 3vw;
             padding: 5vw;
         }
+
     </style>
 </head>
 
@@ -70,6 +71,7 @@
             const template = document.querySelector("template");
             personer.feed.entry.forEach(person => {
 
+
                 //løb dyrene igennem og indsæt data i en template
                 let klon = template.cloneNode(true).content;
                 klon.querySelector("h2").textContent = person.gsx$navn.$t;
@@ -78,12 +80,16 @@
                 klon.querySelector(".job").textContent += person.gsx$job.$t;
                 klon.querySelector(".hobby").textContent += person.gsx$hobby.$t;
                 container.appendChild(klon);
+
             })
         }
+
     </script>
 
 
 
 
 
-</body></html>
+</body>
+
+</html>
